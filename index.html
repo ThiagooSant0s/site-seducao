@@ -4,470 +4,731 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domine a Psicologia da Atração | Sedução & Conquista</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(220, 8, 5, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #dc0805, #ff4444);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 8, 5, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 8, 5, 0.4);
+        }
+
+        .price-highlight {
+            margin: 30px 0;
+            font-size: 1.1rem;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .new-price {
+            color: #dc0805;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: #111;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #fff;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: #dc0805;
+            box-shadow: 0 10px 30px rgba(220, 8, 5, 0.2);
+        }
+
+        .benefit-number {
+            background: linear-gradient(45deg, #dc0805, #ff4444);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .benefit-card p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Target Audience Section */
+        .target-audience {
+            padding: 80px 0;
+            background: #000;
+        }
+
+        .audience-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .audience-item {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #dc0805;
+        }
+
+        .audience-item h3 {
+            color: #dc0805;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .audience-item p {
+            color: #ccc;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+            background: #111;
+        }
+
+        .content-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .content-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+
+        .content-list li:before {
+            content: "✓";
+            color: #dc0805;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background: #000;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #333;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            color: #dc0805;
+            font-weight: bold;
+        }
+
+        .testimonial-info {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Offer Section */
+        .offer {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #dc0805, #ff4444);
+            text-align: center;
+        }
+
+        .offer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .price-container {
+            margin: 40px 0;
+        }
+
+        .price-from {
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            opacity: 0.8;
+        }
+
+        .price-current {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .guarantee {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        /* Bonus Section */
+        .bonus {
+            padding: 80px 0;
+            background: #111;
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .bonus-item {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #333;
+        }
+
+        .bonus-value {
+            color: #dc0805;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: #000;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #1a1a1a;
+            padding: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #2a2a2a;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            background: #111;
+            color: #ccc;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            background: #111;
+            text-align: center;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .benefits-grid,
+            .audience-list,
+            .testimonials-grid,
+            .bonus-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .countdown-item {
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Sales Notification */
+        .sales-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .sales-notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sales-notification .icon {
+            font-size: 1.5rem;
+            color: #dc0805;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navegação Fixa -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">Sedução & Conquista</div>
-            <div class="nav-links">
-                <a href="#beneficios">Benefícios</a>
-                <a href="#para-quem">Para Quem</a>
-                <a href="#conteudo">Conteúdo</a>
-                <a href="#oferta" class="nav-cta">Garantir Acesso</a>
-            </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
+    <!-- Sales Notification -->
+    <div class="sales-notification" id="salesNotification">
+        <span class="icon">&#128722;</span> <!-- Shopping cart icon -->
+        <span id="notificationText"></span>
+    </div>
 
-    <!-- Seção Hero -->
-    <section class="hero" id="inicio">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Domine a Psicologia da Atração e Transforme sua Vida Amorosa</h1>
-                <h2>O método comprovado que já ajudou mais de 1.000 homens a conquistarem conexões genuínas e duradouras</h2>
-                <div class="hero-cta">
-                    <a href="https://pay.hotmart.com/A99274533H?off=joafdyf0" class="btn btn-primary" target="_blank">QUERO TRANSFORMAR MINHA VIDA AMOROSA</a>
-                    <p class="urgency">Oferta especial por tempo limitado: <span class="price-old">De R$29,90</span> por apenas <span class="price-new">R$5,99</span></p>
+                <h1>SUA FALTA DE ASSUNTO<br>COM AS MULHERES<br>CHEGOU AO FIM!</h1>
+                <p class="subtitle">Domine a Psicologia da Atração e Transforme sua Vida Amorosa com o método comprovado que já ajudou mais de 1.000 homens</p>
+                
+                <div class="price-highlight">
+                    Oferta especial por tempo limitado: <span class="old-price">De R$59,70</span> por apenas <span class="new-price">R$10,99</span>
                 </div>
-                <div class="social-proof">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                
+                <a href="https://pay.hotmart.com/A99274533H?off=pf2il3fi&bid=1750782713515" class="cta-button">QUERO TRANSFORMAR MINHA VIDA AMOROSA</a>
+                
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">23</span>
+                        <span class="countdown-label">Horas</span>
                     </div>
-                    <p>Mais de 1.000 homens já transformaram suas vidas com este método</p>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">59</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">58</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
                 </div>
-            </div>
-            <div class="scroll-indicator">
-                <a href="#beneficios">
-                    <i class="fas fa-chevron-down"></i>
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Benefícios -->
-    <section class="benefits" id="beneficios">
+    <!-- Benefits Section -->
+    <section class="benefits">
         <div class="container">
-            <h2 class="section-title">O Que Você Vai Conquistar Com Este Guia</h2>
+            <h2 class="section-title">COM ESSE GUIA VOCÊ VAI CONSEGUIR:</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
+                    <div class="benefit-number">1</div>
                     <h3>Entendimento Profundo</h3>
                     <p>Compreenda os gatilhos da mente feminina para criar conexões verdadeiras e desejadas.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-clipboard-check"></i>
-                    </div>
+                    <div class="benefit-number">2</div>
                     <h3>Técnicas Testadas</h3>
                     <p>Aprenda métodos práticos que você pode aplicar imediatamente em encontros e conversas.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
+                    <div class="benefit-number">3</div>
                     <h3>Confiança Inabalável</h3>
                     <p>Construa uma postura e presença irresistíveis, mesmo começando do zero.</p>
                 </div>
-            </div>
-            <div class="section-cta">
-                <a href="https://pay.hotmart.com/A99274533H?off=joafdyf0" class="btn btn-primary" target="_blank">QUERO ACESSAR O GUIA AGORA</a>
+                <div class="benefit-card">
+                    <div class="benefit-number">4</div>
+                    <h3>Identificar Sinais</h3>
+                    <p>Saiba reconhecer os sinais de interesse feminino e como adaptar sua abordagem.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">5</div>
+                    <h3>Gerar Atração</h3>
+                    <p>Aprenda técnicas para despertar curiosidade e paixão genuína apenas conversando.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção Para Quem é Este Guia -->
-    <section class="for-who" id="para-quem">
+    <!-- Target Audience Section -->
+    <section class="target-audience">
         <div class="container">
-            <h2 class="section-title">Este Guia Foi Criado Especialmente Para Você Que...</h2>
-            <div class="profiles-grid">
-                <div class="profile-card">
-                    <div class="profile-icon">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
+            <h2 class="section-title">PARA QUEM É O GUIA SEDUÇÃO & CONQUISTA?</h2>
+            <div class="audience-list">
+                <div class="audience-item">
                     <h3>Homens Inseguros</h3>
-                    <p>Que desejam superar a timidez e medos na hora da paquera.</p>
+                    <p>Que desejam superar a timidez e medos na hora da paquera e se comunicar melhor com as mulheres.</p>
                 </div>
-                <div class="profile-card">
-                    <div class="profile-icon">
-                        <i class="fas fa-chess-knight"></i>
-                    </div>
+                <div class="audience-item">
                     <h3>Homens Estratégicos</h3>
-                    <p>Interessados em entender a psicologia por trás da atração.</p>
+                    <p>Interessados em entender a psicologia por trás da atração e que cansaram de sofrer ao serem rejeitados.</p>
                 </div>
-                <div class="profile-card">
-                    <div class="profile-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
+                <div class="audience-item">
                     <h3>Homens com Pouca Experiência</h3>
-                    <p>Que querem resultados práticos e rápidos, evitando erros comuns.</p>
+                    <p>Que não sabem o que falar na hora da abordagem e não tem assunto para manter conversas interessantes.</p>
+                </div>
+                <div class="audience-item">
+                    <h3>Homens Determinados</h3>
+                    <p>Que estão cansados de levar fora, desejam aprender os sinais de interesse feminino e como gerar atração apenas conversando.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção O Que Você Vai Aprender -->
-    <section class="content" id="conteudo">
+    <!-- Content Section -->
+    <section class="content-section">
         <div class="container">
-            <h2 class="section-title">Conteúdo Exclusivo e Prático</h2>
-            <div class="content-grid">
-                <div class="content-column">
-                    <div class="content-item">
-                        <i class="fas fa-check-circle"></i>
-                        <p>Como despertar curiosidade, criar tensão e acender o desejo psicológico</p>
-                    </div>
-                    <div class="content-item">
-                        <i class="fas fa-check-circle"></i>
-                        <p>A arte da linguagem corporal magnética: postura, olhar e silêncios que seduzem</p>
-                    </div>
-                    <div class="content-item">
-                        <i class="fas fa-check-circle"></i>
-                        <p>A poderosa estratégia do "puxa e solta": demonstre interesse sem parecer carente</p>
-                    </div>
-                    <div class="content-item">
-                        <i class="fas fa-check-circle"></i>
-                        <p>Frases impactantes para iniciar conversas com emoção e intensidade</p>
-                    </div>
-                </div>
-                <div class="content-column">
-                    <div class="content-item">
-                        <i class="fas fa-check-circle"></i>
-                        <p>Como formar conexões profundas em minutos — mesmo se você for tímido</p>
-                    </div>
-                    <div class="content-item">
-                        <i class="fas fa-check-circle"></i>
-                        <p>Uso inteligente do Instagram, WhatsApp e áudios para atrair e provocar interesse</p>
-                    </div>
-                    <div class="content-item">
-                        <i class="fas fa-check-circle"></i>
-                        <p>Checklist comportamental: entenda tudo que seu corpo comunica sem palavras</p>
-                    </div>
-                    <div class="content-item">
-                        <i class="fas fa-check-circle"></i>
-                        <p>Bônus: Guia prático para conquistar o beijo inesquecível</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-cta">
-                <a href="https://pay.hotmart.com/A99274533H?off=joafdyf0" class="btn btn-primary" target="_blank">QUERO DOMINAR ESSAS TÉCNICAS</a>
-            </div>
+            <h2 class="section-title">CONTEÚDO EXCLUSIVO E PRÁTICO</h2>
+            <ul class="content-list">
+                <li>Como despertar curiosidade, criar tensão e acender o desejo psicológico</li>
+                <li>A arte da linguagem corporal magnética: postura, olhar e silêncios que seduzem</li>
+                <li>A poderosa estratégia do "puxa e solta": demonstre interesse sem parecer carente</li>
+                <li>Frases impactantes para iniciar conversas com emoção e intensidade</li>
+                <li>Como formar conexões profundas em minutos — mesmo se você for tímido</li>
+                <li>Uso inteligente do Instagram, WhatsApp e áudios para atrair e provocar interesse</li>
+                <li>Checklist comportamental: entenda tudo que seu corpo comunica sem palavras</li>
+                <li>Bônus: Guia prático para conquistar o beijo inesquecível</li>
+            </ul>
         </div>
     </section>
 
-    <!-- Seção de Depoimentos -->
+    <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">O Que Dizem Nossos Alunos</h2>
-            <div class="testimonials-slider">
-                <div class="testimonial-card">
-                    <div class="testimonial-quote">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
+            <h2 class="section-title">NENHUM DELES SOFRE MAIS COM A REJEIÇÃO...</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
                     <p class="testimonial-text">"Depois de aplicar as técnicas do guia, consegui superar minha timidez e hoje estou em um relacionamento incrível. As estratégias são simples e funcionam!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Carlos M.</h4>
-                            <p>28 anos, São Paulo</p>
-                        </div>
-                    </div>
+                    <div class="testimonial-author">Carlos M.</div>
+                    <div class="testimonial-info">28 anos, São Paulo</div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-quote">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
+                <div class="testimonial">
                     <p class="testimonial-text">"Sempre tive dificuldade em manter conversas interessantes. Com as técnicas do guia, aprendi a criar conexões genuínas e hoje tenho muito mais confiança."</p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Rafael S.</h4>
-                            <p>32 anos, Rio de Janeiro</p>
-                        </div>
-                    </div>
+                    <div class="testimonial-author">Rafael S.</div>
+                    <div class="testimonial-info">32 anos, Rio de Janeiro</div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-quote">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <p class="testimonial-text">"Investi R$5,99 e o retorno foi inestimável. As estratégias são práticas e diretas, sem enrolação. Recomendo para qualquer homem que queira melhorar sua vida amorosa."</p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>André L.</h4>
-                            <p>25 anos, Belo Horizonte</p>
-                        </div>
-                    </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Investi R$10,99 e o retorno foi inestimável. As estratégias são práticas e diretas, sem enrolação. Recomendo para qualquer homem que queira melhorar sua vida amorosa."</p>
+                    <div class="testimonial-author">André L.</div>
+                    <div class="testimonial-info">25 anos, Belo Horizonte</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção Táticas Avançadas -->
-    <section class="tactics">
+    <!-- Offer Section -->
+    <section class="offer">
         <div class="container">
-            <h2 class="section-title">Táticas Avançadas Para Conquistar</h2>
-            <div class="tactics-grid">
-                <div class="tactic-card">
-                    <div class="tactic-number">1</div>
-                    <h3>Identificação de Perfis</h3>
-                    <p>Saiba reconhecer o que cada pessoa busca e como adaptar sua abordagem.</p>
-                </div>
-                <div class="tactic-card">
-                    <div class="tactic-number">2</div>
-                    <h3>Abordagem Personalizada</h3>
-                    <p>Use estratégias sob medida, evitando clichês e aumentando sua efetividade.</p>
-                </div>
-                <div class="tactic-card">
-                    <div class="tactic-number">3</div>
-                    <h3>Criação de Desejo</h3>
-                    <p>Aprenda técnicas para despertar curiosidade e paixão genuína.</p>
-                </div>
+            <h2>INVESTINDO NO GUIA SEDUÇÃO & CONQUISTA HOJE,<br>VOCÊ VAI LEVAR TUDO ISSO DE GRAÇA:</h2>
+            
+            <div class="price-container">
+                <div class="price-from">De R$59,70</div>
+                <div class="price-current">Por apenas R$10,99</div>
             </div>
+            
+            <div class="guarantee">
+                <h3>Garantia total de 7 dias</h3>
+                <p>Compre sem riscos e com total satisfação. Se não ficar satisfeito, devolvemos seu dinheiro.</p>
+            </div>
+            
+            <a href="https://pay.hotmart.com/A99274533H?off=pf2il3fi&bid=1750782713515" class="cta-button">EU QUERO AGORA</a>
         </div>
     </section>
 
-    <!-- Seção de Oferta e Garantia -->
-    <section class="offer" id="oferta">
-        <div class="container">
-            <h2 class="section-title">Oferta Exclusiva e Imperdível!</h2>
-            <div class="offer-box">
-                <div class="price-tag">
-                    <p class="price-old">De <span>R$29,90</span></p>
-                    <p class="price-new">Por apenas <span>R$5,99</span></p>
-                </div>
-                <div class="guarantee">
-                    <div class="guarantee-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="guarantee-text">
-                        <h3>Garantia total de 7 dias</h3>
-                        <p>Compre sem riscos e com total satisfação. Se não ficar satisfeito, devolvemos seu dinheiro.</p>
-                    </div>
-                </div>
-                <div class="countdown">
-                    <p>Esta oferta expira em:</p>
-                    <div class="timer">
-                        <div class="timer-item">
-                            <span id="hours">24</span>
-                            <p>Horas</p>
-                        </div>
-                        <div class="timer-item">
-                            <span id="minutes">00</span>
-                            <p>Minutos</p>
-                        </div>
-                        <div class="timer-item">
-                            <span id="seconds">00</span>
-                            <p>Segundos</p>
-                        </div>
-                    </div>
-                </div>
-                <a href="https://pay.hotmart.com/A99274533H?off=joafdyf0" class="btn btn-primary btn-large" target="_blank">QUERO GARANTIR MEU EBOOK AGORA</a>
-                <div class="payment-methods">
-                    <p>Pagamento seguro via:</p>
-                    <div class="payment-icons">
-                        <i class="fab fa-cc-visa"></i>
-                        <i class="fab fa-cc-mastercard"></i>
-                        <i class="fab fa-cc-amex"></i>
-                        <i class="fab fa-pix"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Bônus -->
+    <!-- Bonus Section -->
     <section class="bonus">
         <div class="container">
-            <h2 class="section-title">Bônus Exclusivos Que Você Recebe Hoje</h2>
+            <h2 class="section-title">BÔNUS EXCLUSIVOS QUE VOCÊ RECEBE HOJE</h2>
             <div class="bonus-grid">
-                <div class="bonus-card">
-                    <div class="bonus-icon">
-                        <i class="fas fa-comment-dots"></i>
-                    </div>
-                    <div class="bonus-content">
-                        <h3>Frases Poderosas</h3>
-                        <p>Coletânea com mais de 50 frases testadas e aprovadas para iniciar conversas com impacto e despertar interesse imediato.</p>
-                        <p class="bonus-value">Valor: <span>R$9,90</span></p>
-                    </div>
+                <div class="bonus-item">
+                    <h3>Frases Poderosas</h3>
+                    <p>Coletânea com mais de 50 frases testadas e aprovadas para iniciar conversas com impacto e despertar interesse imediato.</p>
+                    <div class="bonus-value">Valor: R$19,90</div>
                 </div>
-                <div class="bonus-card">
-                    <div class="bonus-icon">
-                        <i class="fas fa-list-check"></i>
-                    </div>
-                    <div class="bonus-content">
-                        <h3>Checklist de Linguagem Corporal</h3>
-                        <p>Guia completo para você entender e dominar os sinais não-verbais que fazem toda a diferença na atração.</p>
-                        <p class="bonus-value">Valor: <span>R$17,90</span></p>
-                    </div>
+                <div class="bonus-item">
+                    <h3>Checklist de Linguagem Corporal</h3>
+                    <p>Guia completo para você entender e dominar os sinais não-verbais que fazem toda a diferença na atração.</p>
+                    <div class="bonus-value">Valor: R$19,90</div>
                 </div>
-                <div class="bonus-card">
-                    <div class="bonus-icon">
-                        <i class="fas fa-kiss-wink-heart"></i>
-                    </div>
-                    <div class="bonus-content">
-                        <h3>Guia do Beijo Inesquecível</h3>
-                        <p>Técnicas e estratégias para criar o momento perfeito e conquistar aquele beijo que ela nunca vai esquecer.</p>
-                        <p class="bonus-value">Valor: <span>R$12,90</span></p>
-                    </div>
+                <div class="bonus-item">
+                    <h3>Guia do Beijo Inesquecível</h3>
+                    <p>Técnicas e estratégias para criar o momento perfeito e conquistar aquele beijo que ela nunca vai esquecer.</p>
+                    <div class="bonus-value">Valor: R$19,90</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção FAQ -->
+    <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Como recebo o material após a compra?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Imediatamente após a confirmação do pagamento, você receberá um e-mail com as instruções de acesso ao material. O download é instantâneo e você pode começar a aplicar as técnicas no mesmo dia.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Quanto tempo tenho acesso ao conteúdo?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>O acesso é vitalício! Uma vez que você adquire o material, ele é seu para sempre. Você pode consultar quantas vezes quiser e aplicar as técnicas no seu próprio ritmo.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Como funciona a garantia de 7 dias?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>É simples: se você não ficar satisfeito com o conteúdo por qualquer motivo, basta enviar um e-mail para nosso suporte dentro do período de 7 dias após a compra, e devolveremos 100% do seu investimento, sem questionamentos.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Preciso de experiência prévia para aplicar as técnicas?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Não! O guia foi desenvolvido para homens de todos os níveis de experiência. As técnicas são explicadas passo a passo, de forma simples e direta, para que qualquer pessoa possa aplicá-las, mesmo começando do zero.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Como entro em contato em caso de dúvidas?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Após a compra, você terá acesso direto ao nosso suporte via WhatsApp para tirar qualquer dúvida sobre o conteúdo ou aplicação das técnicas. Estamos comprometidos com o seu sucesso!</p>
-                    </div>
-                </div>
+            <h2 class="section-title">PERGUNTAS FREQUENTES:</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Como recebo o material após a compra?</div>
+                <div class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá um e-mail com as instruções de acesso ao material. O download é instantâneo e você pode começar a aplicar as técnicas no mesmo dia.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Quanto tempo tenho acesso ao conteúdo?</div>
+                <div class="faq-answer">O acesso é vitalício! Uma vez que você adquire o material, ele é seu para sempre. Você pode consultar quantas vezes quiser e aplicar as técnicas no seu próprio ritmo.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Como funciona a garantia de 7 dias?</div>
+                <div class="faq-answer">É simples: se você não ficar satisfeito com o conteúdo por qualquer motivo, basta enviar um e-mail para nosso suporte dentro do período de 7 dias após a compra, e devolveremos 100% do seu investimento, sem questionamentos.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Preciso de experiência prévia para aplicar as técnicas?</div>
+                <div class="faq-answer">Não! O guia foi desenvolvido para homens de todos os níveis de experiência. As técnicas são explicadas passo a passo, de forma simples e direta, para que qualquer pessoa possa aplicá-las, mesmo começando do zero.</div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Recapitulação -->
-    <section class="recap">
-        <div class="container">
-            <h2 class="section-title">Recapitulando o Que Você Recebe</h2>
-            <div class="recap-list">
-                <div class="recap-item">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Guia completo: Sedução & Conquista</p>
-                </div>
-                <div class="recap-item">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Bônus 1: Frases Poderosas (Valor: R$9,90)</p>
-                </div>
-                <div class="recap-item">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Bônus 2: Checklist de Linguagem Corporal (Valor: R$17,90)</p>
-                </div>
-                <div class="recap-item">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Bônus 3: Guia do Beijo Inesquecível (Valor: R$12,90)</p>
-                </div>
-                <div class="recap-item">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Garantia de 7 dias</p>
-                </div>
-                <div class="recap-item">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Acesso imediato após a compra</p>
-                </div>
-                <div class="recap-item">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Contato direto pelo WhatsApp</p>
-                </div>
-            </div>
-            <div class="recap-total">
-                <p class="total-value">Valor total: <span>R$40,70</span></p>
-                <p class="today-price">Hoje por apenas: <span>R$5,99</span></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Final de Conversão -->
-    <section class="final-cta">
+    <!-- Final CTA -->
+    <section class="offer">
         <div class="container">
             <h2>Transforme Sua Vida Amorosa Hoje Mesmo</h2>
             <p>Não perca mais tempo e domine a arte da atração com um guia direto e eficaz</p>
-            <a href="https://pay.hotmart.com/A99274533H?off=joafdyf0" class="btn btn-primary btn-large" target="_blank">QUERO COMEÇAR AGORA</a>
-            <div class="security">
-                <div class="security-item">
-                    <i class="fas fa-lock"></i>
-                    <p>Pagamento 100% Seguro</p>
-                </div>
-                <div class="security-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <p>Garantia de 7 Dias</p>
-                </div>
-                <div class="security-item">
-                    <i class="fas fa-bolt"></i>
-                    <p>Acesso Imediato</p>
-                </div>
-            </div>
-            <p class="urgency-final">Oferta válida somente durante esta campanha</p>
+            <br>
+            <a href="https://pay.hotmart.com/A99274533H?off=pf2il3fi&bid=1750782713515" class="cta-button">QUERO COMEÇAR AGORA</a>
+            <br><br>
+            <p>Pagamento 100% Seguro | Garantia de 7 Dias | Acesso Imediato</p>
         </div>
     </section>
 
-    <!-- Rodapé -->
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Sedução & Conquista</h3>
-                    <p>Transformando vidas amorosas desde 2020</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#">Termos de Uso</a>
-                    <a href="#">Política de Privacidade</a>
-                    <a href="#">Contato</a>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Sedução & Conquista. Todos os direitos reservados.</p>
-            </div>
+            <p>&copy; 2024 Sedução & Conquista - Todos os direitos reservados</p>
+            <p>Oferta válida somente durante esta campanha</p>
         </div>
     </footer>
 
-    <!-- Botão CTA Flutuante -->
-    <div class="floating-cta">
-        <a href="https://pay.hotmart.com/A99274533H?off=joafdyf0" class="btn btn-primary" target="_blank">GARANTIR ACESSO</a>
-    </div>
+    <script>
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Close all FAQ answers
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked FAQ if it wasn't active
+            if (!isActive) {
+                answer.classList.add('active');
+            }
+        }
 
-    <script src="script.js"></script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const endTime = now + (24 * 60 * 60 * 1000); // 24 hours from now
+            
+            setInterval(() => {
+                const currentTime = new Date().getTime();
+                const timeLeft = endTime - currentTime;
+                
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+                
+                if (timeLeft < 0) {
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                }
+            }, 1000);
+        }
+        
+        updateCountdown();
+
+        // Sales Notification
+        const salesNotifications = [
+            "1 pessoa comprou o guia nas últimas horas!",
+            "2 pessoas compraram o guia nas últimas horas!",
+            "3 pessoas compraram o guia nas últimas horas!",
+            "Alguém de São Paulo comprou o guia agora!",
+            "Alguém do Rio de Janeiro comprou o guia agora!",
+            "Alguém de Belo Horizonte comprou o guia agora!"
+        ];
+
+        function showSalesNotification() {
+            const notificationElement = document.getElementById('salesNotification');
+            const notificationTextElement = document.getElementById('notificationText');
+
+            const randomIndex = Math.floor(Math.random() * salesNotifications.length);
+            notificationTextElement.textContent = salesNotifications[randomIndex];
+
+            notificationElement.classList.add('show');
+
+            setTimeout(() => {
+                notificationElement.classList.remove('show');
+            }, 5000); // Hide after 5 seconds
+        }
+
+        setInterval(showSalesNotification, 10000); // Show every 10 seconds
+        setTimeout(showSalesNotification, 2000); // Show first notification after 2 seconds
+    </script>
 </body>
 </html>
+
